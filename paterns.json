@@ -1,0 +1,47 @@
+[
+   {
+      "elicitation_pattern": "[temperatura|ciepło|zimno|ile stopni]",
+      "devices": [
+         {
+            "name_pattern": "[Szymek|Szymka]",
+            "query": "type=devices&rid=194",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w pokoju Marysi wynosi {{return}}℃"
+         }
+      ]
+   },
+   {
+      "elicitation_pattern": "[włącz|zaświeć|przełącz]",
+      "devices": [
+         {
+            "name_pattern": "[Telewizor|TV]",
+            "query": "type=command&param=switchlight&idx=99&switchcmd=On",
+            "return":".status",
+            "reply": "Włączem telewizor"
+         },
+         {
+            "name_pattern": "TVN",
+            "query": "type=command&param=switchlight&idx=99&switchcmd=Set%20Level&level=20",
+            "return":".status",
+            "reply": "Zmieniam kanał na TVN"
+         }
+      ]
+   },
+   {
+      "elicitation_pattern": "ustaw temperaturę",
+      "devices": [
+         {
+            "name_pattern": "[piętro|piętrze|na górze]",
+            "query": "type=command&param=udevice&idx=123&nvalue=0&svalue={{number}}",
+            "return":".status",
+            "reply": "Ustawiam temperaturę na wartość {{return}}℃"
+         },
+         {
+            "name_pattern": "[noc|nocna|nocną]",
+            "query": "type=command&param=udevice&idx=124&nvalue=0&svalue={{number}}",
+            "return":".status",
+            "reply": "Ustawiam temperaturę nocną na wartość {{return}}℃"
+         }
+      ]
+   }
+]

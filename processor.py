@@ -1,6 +1,7 @@
 import json
 import pyjq
 import re
+import Requests
 
 class txtProcessor:
   def __init__(self):
@@ -12,8 +13,9 @@ class txtProcessor:
     return data
 
   def GetDomoticzValue(self, query, jq):
-    #TODO
-    return 0
+    #TODO Domoticz Request
+    data = ''
+    return pyjq.first(jq, data)
   
   def GoProcess(self, phrase, _number, _text):
     for rule in self.rules:

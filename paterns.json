@@ -34,13 +34,13 @@
             "name_pattern": "piętro|na piętrze|na górze",
             "query": "type=command&param=udevice&idx=123&nvalue=0&svalue={{number}}",
             "return":".status",
-            "reply": "Ustawiam temperaturę na wartość {{return}}℃"
+            "reply": "Ustawiam temperaturę na wartość {{number}}℃"
          },
          {
             "name_pattern": "noc|nocna|nocną|w nocy",
             "query": "type=command&param=udevice&idx=124&nvalue=0&svalue={{number}}",
             "return":".status",
-            "reply": "Ustawiam temperaturę nocną na wartość {{return}}℃"
+            "reply": "Ustawiam temperaturę nocną na wartość {{number}}℃"
          }
       ]
    }

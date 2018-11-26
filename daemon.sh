@@ -11,9 +11,10 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Sample Daemon"
 NAME=sampleserver
 DAEMON=/usr/sbin/$NAME
+DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
-CHUID=root
+CHUID=pi
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0

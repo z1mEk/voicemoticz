@@ -11,7 +11,7 @@ class txtProcessor:
       data = json.load(f)
     return data
 
-  def GetDomoticzValue(query, jq):
+  def GetDomoticzValue(self, query, jq):
     #TODO
     return 0
   

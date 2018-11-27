@@ -12,14 +12,14 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 - [ ] daemon
 - [ ] get text from Google Home Assistant
 
-## Requiremenst import
+## Requiremenst import python library
 ```
 import json
 import pyjq
 import re
 import urllib.request
 import ssl
-
+```
 ## Install for tests
 ```
 git clone https://github.com/z1mEk/voicemoticz.git

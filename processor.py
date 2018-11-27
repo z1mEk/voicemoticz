@@ -17,18 +17,20 @@ class txtProcessor:
     data = ''
     return pyjq.first(jq, data)
   
-  def GoProcess(self, phrase, _number, _text):
+  def GetNumberFromPharse(self, phrase):
+    return ''
+  
+  def GoProcess(self, phrase):
     for rule in self.rules:
       if bool(re.search(rule['elicitation_pattern'], phrase)):
         for device in rule['devices']:
           if bool(re.search(device['name_pattern'], phrase)):
             query = device['query']
+            _number = self.GetNumberFromPharse(pharse)
             query = re.sub('\{\{number\}\}', str(_number), query)
-            query = re.sub('\{\{text\}\}', _text, query)
             domoticzValue = self.GetDomoticzValue(query, device['return'])
             reply = device['reply']
             reply = re.sub('\{\{return\}\}', str(domoticzValue), reply)
             reply = re.sub('\{\{number\}\}', str(_number), reply)
-            reply = re.sub('\{\{text\}\}', _text, reply)
             return reply
             

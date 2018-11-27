@@ -12,7 +12,7 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 - [ ] daemon
 - [ ] get text from Google Home Assistant
 
-## Requiremenst install python library
+## Install requirements python library
 ```
 pip3 install pyjq
 ```

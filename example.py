@@ -3,9 +3,7 @@
 from processor import txtProcessor
 import sys
 
-fraza = sys.argv[1]
-
+phrase = sys.argv[1]
 txtp = txtProcessor()
-ar = txtp.GoProcess(fraza)
-
+ar = txtp.GoProcess(phrase)
 print(ar)

@@ -13,9 +13,10 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 
 
 ## Install for tests
+```
 git clone https://github.com/z1mEk/voicemoticz.git
 sudo chmod +x voicemoticz.py
-
+```
 ## Config
 Open the config.json file and set your Domoticz API url. 
 
@@ -24,13 +25,17 @@ Open the rules.json and modify data for your preference and your Domoticz
 
 ## Run Test
 ```
-./voicemoticz.ph "Jaka jest temperatura u Marysi?"
+./voicemoticz.py "Jaka jest temperatura u Marysi?"
 ```
 or 
 ```
-./voicemoticz.ph "Ile stopni jest u Szymka w pokoju?"
+./voicemoticz.py "Ile stopni jest u Szymka w pokoju?"
 ```
 or
 ```
-./voicemoticz.ph "Ciepło jest na dworze?"
+./voicemoticz.py "Ciepło jest na dworze?"
+```
+## Example Result
+```
+Temperatura w pokoju Szymka wynosi 20.5℃
 ```

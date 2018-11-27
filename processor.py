@@ -1,7 +1,6 @@
 import json
 import pyjq
 import re
-import Requests
 
 class txtProcessor:
   def __init__(self):
@@ -26,11 +25,11 @@ class txtProcessor:
         for device in rule['devices']:
           if bool(re.search(device['name_pattern'], phrase)):
             query = device['query']
-            _number = self.GetNumberFromPharse(pharse)
-            query = re.sub('\{\{number\}\}', str(_number), query)
+            nr = self.GetNumberFromPharse(pharse)
+            query = re.sub('\{\{number\}\}', str(nr), query)
             domoticzValue = self.GetDomoticzValue(query, device['return'])
             reply = device['reply']
             reply = re.sub('\{\{return\}\}', str(domoticzValue), reply)
-            reply = re.sub('\{\{number\}\}', str(_number), reply)
+            reply = re.sub('\{\{number\}\}', str(nr), reply)
             return reply
             

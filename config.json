@@ -1,5 +1,6 @@
 {
-  "DomoticzAPIUrl":"http://192.168.1.50:8080/json.htm?",
+  "DomoticzAPIUrl":"https://192.168.1.175/json.htm?",
+  "DomoticzIgnoreSSLCert":1,
   "CachePath":"/var/tmp",
   "LogFile":"/var/log/DomoticzSay.log"
 }

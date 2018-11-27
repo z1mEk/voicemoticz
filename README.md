@@ -2,6 +2,7 @@
 
 Ask Domoticz a natural language about the temperature or ask him to turn on the light in the living room.
 
+## TODO
 - [x] text processor
 - [x] config
 - [x] get data from Domoticz
@@ -11,6 +12,13 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 - [ ] daemon
 - [ ] get text from Google Home Assistant
 
+## Requiremenst import
+```
+import json
+import pyjq
+import re
+import urllib.request
+import ssl
 
 ## Install for tests
 ```

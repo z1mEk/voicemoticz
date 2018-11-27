@@ -35,7 +35,14 @@ or
 ```
 ./voicemoticz.py "Ciepło jest na dworze?"
 ```
+or
+```
+./voicemoticz.py "Włącz kinkiety w salonie?"
+```
 ## Example Result
 ```
 Temperatura w pokoju Szymka wynosi 20.5℃
+```
+```
+OK, włączam kinkiety w salonie
 ```

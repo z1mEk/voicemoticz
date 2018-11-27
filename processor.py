@@ -16,8 +16,9 @@ class txtProcessor:
     data = ''
     return pyjq.first(jq, data)
   
-  def GetNumberFromPharse(self, phrase):
-    return ''
+  def ExtractNumber(self, phrase):
+    nr = ''.join([n for n in phrase if n.isdigit()])
+    return nr
   
   def GoProcess(self, phrase):
     for rule in self.rules:
@@ -31,5 +32,5 @@ class txtProcessor:
             reply = device['reply']
             reply = re.sub('\{\{return\}\}', str(domoticzValue), reply)
             reply = re.sub('\{\{number\}\}', str(nr), reply)
-            return reply
+            return [reply, query, nr, domoticzValue]
             

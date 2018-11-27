@@ -23,16 +23,14 @@ Open the config.json file and set your Domoticz API url.
 Open the rules.json and modify data for your preference and your Domoticz
 
 ## Run Test
-'''
+```
 ./voicemoticz.ph "Jaka jest temperatura u Marysi?"
-'''
+```
 or 
-'''
+```
 ./voicemoticz.ph "Ile stopni jest u Szymka w pokoju?"
-'''
+```
 or
-'''
+```
 ./voicemoticz.ph "Ciepło jest na dworze?"
-'''
-
-## 
+```

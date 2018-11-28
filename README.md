@@ -2,6 +2,11 @@
 
 Ask Domoticz a natural language about the temperature or ask him to turn on the light in the living room.
 
+## ChangeLog
+2018.11.28
++ add support "unknown ask" plase add keys 'reply_unknown' in rules.json and conf.json (see my example files)
++ add support float number recognize from phrase
+
 ## TODO
 - [x] text processor
 - [x] config
@@ -26,6 +31,8 @@ Open the config.json file and set your Domoticz API url.
 
 ## Set rules
 Open the rules.json and modify data for your preference and your Domoticz
+Keys 'elicitation_pattern' and 'name_pattern' suported regex.
+You must do it carefully, keeping the logic
 
 ## Run Test
 ```

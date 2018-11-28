@@ -40,11 +40,12 @@
          },
          {
             "name_pattern": "garaż|garażu",
-            "query": "type=devices&rid=578",
+            "query": "type=devices&rid=50",
             "return":".result[] | .Temp",
             "reply": "Temperatura w garażu wynosi {{return}}℃"
          }
-      ]
+      ],
+      "reply_unknown":"Nie wiem o którą temperaturę Ci chodzi, nie znam tej lokalizacji."
    },
    {
       "elicitation_pattern": "włącz|zaświeć|przełącz",
@@ -61,7 +62,9 @@
             "return":".status",
             "reply": "Zmieniam kanał na TVN"
          }
-      ]
+      ],
+      "reply_unknown":"Nie znam tego urządzenia. Musisz mnie nauczyć co to jest."
+
    },
    {
       "elicitation_pattern": "ustaw temperaturę",
@@ -78,6 +81,7 @@
             "return":".status",
             "reply": "Ustawiam temperaturę nocną na wartość {{number}}℃"
          }
-      ]
+      ],
+      "reply_unknown":"Nie wiem gdzie chcesz ustawić temperaturę. Możesz ją ustawić na piętrze albo temperaturę nocną."
    }
 ]

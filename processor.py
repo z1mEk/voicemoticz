@@ -1,7 +1,7 @@
 import json
 import pyjq
 import re
-import urllib.request
+from urllib.request import Request, urlopen
 import ssl
 from config import config
 
@@ -21,14 +21,18 @@ class txtProcessor:
       ctx = ssl.create_default_context()
       ctx.check_hostname = False
       ctx.verify_mode = ssl.CERT_NONE
-    response = urllib.request.urlopen(self.conf['DomoticzAPIUrl'] + query, context=ctx)
+    req = Request(self.conf['DomoticzAPIUrl'] + query)
+    response = urlopen(req, context=ctx)
     data = response.read()
     j = json.loads(data.decode("utf-8"))
     return pyjq.first(jq, j)
 
   def ExtractNumber(self, phrase):
-    nr = ''.join([n for n in phrase if n.isdigit()])
-    return nr
+    nr = re.findall("\d+\.\d+|\d+,\d+|\d+", phrase)
+    if len(nr) > 0: 
+      return re.sub(',', '.', nr[0])
+    else: return ''
+
 
   def GoProcess(self, phrase):
     for rule in self.rules:
@@ -43,3 +47,6 @@ class txtProcessor:
             reply = re.sub('\{\{return\}\}', str(domoticzValue), reply)
             reply = re.sub('\{\{number\}\}', str(nr), reply)
             return reply
+        if 'reply_unknown' in rule:
+          return rule['reply_unknown']
+    return self.conf['reply_unknown']

@@ -43,4 +43,3 @@ class txtProcessor:
             reply = re.sub('\{\{return\}\}', str(domoticzValue), reply)
             reply = re.sub('\{\{number\}\}', str(nr), reply)
             return reply
-

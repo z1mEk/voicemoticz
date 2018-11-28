@@ -30,7 +30,7 @@ sudo chmod +x voicemoticz.py
 Open the config.json file and set your Domoticz API url. 
 
 ## Set rules
-Open the rules.json and modify data for your preference and your Domoticz
+Open the rules.json and modify data for your preference and your Domoticz.
 Keys 'elicitation_pattern' and 'name_pattern' suported regex.
 You must do it carefully, keeping the logic
 

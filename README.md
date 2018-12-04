@@ -61,7 +61,9 @@ or
 ```
 ```
 /GET http://server.port/directask?txt=sample%20tekst
+```
 or
+```
 /POST http://server.port/ask
 {
   'text':'sample text'

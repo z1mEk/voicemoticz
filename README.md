@@ -67,6 +67,10 @@ or
   'text':'sample text'
 }
 ```
+curl example
+```
+curl --header "Content-Type: application/json" --request POST --data '{"text":"Ile stopni jest w salonie?"}' http://192.168.1.175:8071/ask
+```
 ## Example Result
 ```
 Temperatura w pokoju Szymka wynosi 20.5℃

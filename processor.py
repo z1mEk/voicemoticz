@@ -4,10 +4,12 @@ import re
 from urllib.request import Request, urlopen
 import ssl
 from config import config
+import os
 
 class txtProcessor:
   def __init__(self):
-    self.rules = self.LoadJsonFromFile('rules.json')
+    filename = os.path.dirname(__file__) + '/config/rules.json'
+    self.rules = self.LoadJsonFromFile(filename)
     self.conf = config.GetConfig(self)
 
   def LoadJsonFromFile(self, filename):
@@ -34,13 +36,13 @@ class txtProcessor:
     else: return ''
 
 
-  def GoProcess(self, phrase):
+  def GoProcess(self, text="", ga=0):
     for rule in self.rules:
-      if bool(re.search(rule['elicitation_pattern'], phrase, re.IGNORECASE)):
+      if bool(re.search(rule['elicitation_pattern'], text, re.IGNORECASE)):
         for device in rule['devices']:
-          if bool(re.search(device['name_pattern'], phrase, re.IGNORECASE)):
+          if bool(re.search(device['name_pattern'], text, re.IGNORECASE)):
             query = device['query']
-            nr = self.ExtractNumber(phrase)
+            nr = self.ExtractNumber(text)
             query = re.sub('\{\{number\}\}', str(nr), query)
             domoticzValue = self.GetDomoticzValue(query, device['return'])
             reply = device['reply']

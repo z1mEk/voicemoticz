@@ -1,6 +1,0 @@
-{
-  "DomoticzAPIUrl":"https://192.168.1.175/json.htm?",
-  "DomoticzIgnoreSSLCert":1,
-  "GoogleAssistantLanguage":"PL-pl",
-  "reply_unknown":"Niestety nie rozumiem Twojego zapytania"
-}

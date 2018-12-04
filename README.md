@@ -8,7 +8,7 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 + add support float number recognize from phrase
 
 2018.12.04
-+ add webservice (run webservice.py and /POST {'text':'sample text'} to http://server:port/ask or /GET http://server.port/directask?txt=sample%20tekst. Server is localhost, default port is 5000)
++ add webservice (run webservice.py and /POST {'text':'sample text'} to http://server:port/ask or /GET http://server.port/directask?txt=sample%20tekst. Server is localhost, default port is 8071)
 
 ## TODO
 - [x] text processor

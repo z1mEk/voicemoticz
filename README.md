@@ -6,6 +6,7 @@ Ask Domoticz a natural language about the temperature or ask him to turn on the 
 2018.11.28
 + add support "unknown ask" plase add keys 'reply_unknown' in rules.json and conf.json (see my example files)
 + add support float number recognize from phrase
+
 2018.12.04
 + add webservice (run webservice.py and /POST {'text':'sample text'} to http://server:port/ask or /GET http://server.port/directask?txt=sample%20tekst. Server is localhost, default port is 5000)
 

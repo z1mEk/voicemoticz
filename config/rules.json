@@ -1,0 +1,87 @@
+[
+   {
+      "elicitation_pattern": "temperatura|ciepło|zimno|ile stopni",
+      "devices": [
+         {
+            "name_pattern": "Szymek|Szymka",
+            "query": "type=devices&rid=201",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w pokoju Szymka wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "Marysia|Marysi",
+            "query": "type=devices&rid=33",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w pokoju Marysi wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "Salon|Salonie",
+            "query": "type=devices&rid=93",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w salonie wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "Gabinet|Gabinecie|Gabineciku",
+            "query": "type=devices&rid=420",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w gabinecie wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "Sypialnia|Sypialni|Naszym pokoju",
+            "query": "type=devices&rid=194",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w Sypialni wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "na zewnątrz|na dworze|na polu",
+            "query": "type=devices&rid=578",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura na zewnątrz wynosi {{return}}℃"
+         },
+         {
+            "name_pattern": "garaż|garażu",
+            "query": "type=devices&rid=50",
+            "return":".result[] | .Temp",
+            "reply": "Temperatura w garażu wynosi {{return}}℃"
+         }
+      ],
+      "reply_unknown":"Nie wiem o którą temperaturę Ci chodzi, nie znam tej lokalizacji."
+   },
+   {
+      "elicitation_pattern": "włącz|zaświeć|przełącz",
+      "devices": [
+         {
+            "name_pattern": "Telewizor|TV",
+            "query": "type=command&param=switchlight&idx=99&switchcmd=On",
+            "return":".status",
+            "reply": "Włączem telewizor"
+         },
+         {
+            "name_pattern": "TVN",
+            "query": "type=command&param=switchlight&idx=99&switchcmd=Set%20Level&level=20",
+            "return":".status",
+            "reply": "Zmieniam kanał na TVN"
+         }
+      ],
+      "reply_unknown":"Nie znam tego urządzenia. Musisz mnie nauczyć co to jest."
+
+   },
+   {
+      "elicitation_pattern": "ustaw temperaturę",
+      "devices": [
+         {
+            "name_pattern": "piętro|na piętrze|na górze",
+            "query": "type=command&param=udevice&idx=123&nvalue=0&svalue={{number}}",
+            "return":".status",
+            "reply": "Ustawiam temperaturę na wartość {{number}}℃"
+         },
+         {
+            "name_pattern": "noc|nocna|nocną|w nocy",
+            "query": "type=command&param=udevice&idx=124&nvalue=0&svalue={{number}}",
+            "return":".status",
+            "reply": "Ustawiam temperaturę nocną na wartość {{number}}℃"
+         }
+      ],
+      "reply_unknown":"Nie wiem gdzie chcesz ustawić temperaturę. Możesz ją ustawić na piętrze albo temperaturę nocną."
+   }
+]

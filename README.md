@@ -1,4 +1,4 @@
-# VoiceMoticz
+# VoiceMoticz (frozen)
 
 Ask Domoticz a natural language about the temperature or ask him to turn on the light in the living room.
 
